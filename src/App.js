@@ -6,6 +6,10 @@ function App() {
       <header className="App-header">
         <img src="logo512.png" className="App-logo" alt="logo" />
         <p>
+          A simple React site built 
+          by <a className="App-link" href="https://ryanswanstrom.com">Ryan Swanstrom</a>
+        </p>
+        <p>
           GitHub Codespaces <span className="heart">♥️</span> React
         </p>
         <p>
