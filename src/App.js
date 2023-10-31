@@ -10,11 +10,11 @@ function App() {
     desc: 'a longer description',
     url: 'https://www.ryanswantrom.com'
     },
-   {
+    {
     title: 'The biggest news',
     desc: 'a short description',
     url: 'https://www.ryanswantrom.com'
-    },
+    }
   ]
 
   function NewsLinks(e) {
@@ -41,7 +41,7 @@ function App() {
             {message}
           </p>
         </div>
-        {links.map(link => (<div><h2>{link?.title}</h2> <p>{link?.desc} {message}</p> </div>))}  
+        {links.map(link => (<div><h3>{link?.title}</h3> <p>{link?.desc} {message}</p><p><a href={link?.url}>more info</a></p> </div>))}  
         
       </article>
     </div>
