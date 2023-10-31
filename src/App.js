@@ -4,6 +4,18 @@ import { useRef, useState } from 'react';
 function App() {
   const [message, setMessage] = useState('Hello');
   const messageText = useRef();
+  const links = [
+    {
+    title: 'A great article',
+    desc: 'a longer description',
+    url: 'https://www.ryanswantrom.com'
+    },
+   {
+    title: 'The biggest news',
+    desc: 'a short description',
+    url: 'https://www.ryanswantrom.com'
+    },
+  ]
 
   function NewsLinks(e) {
     e.preventDefault();
@@ -29,10 +41,8 @@ function App() {
             {message}
           </p>
         </div>
-        <ol>
-          <li>Link 1</li>
-          <li>Link 2</li>
-        </ol>
+        {links.map(link => (<div><h2>{link?.title}</h2> <p>{link?.desc} {message}</p> </div>))}  
+        
       </article>
     </div>
   );
