@@ -7,12 +7,17 @@ function App() {
   const links = [
     {
     title: 'A great article',
-    desc: 'a longer description',
+    desc: 'a longer description ',
     url: 'https://www.ryanswantrom.com'
     },
     {
     title: 'The biggest news',
-    desc: 'a short description',
+    desc: 'a short description of some news ',
+    url: 'https://www.ryanswantrom.com'
+    },
+    {
+    title: 'More Exciting Dev News',
+    desc: 'all about dev stuff ',
     url: 'https://www.ryanswantrom.com'
     }
   ]
