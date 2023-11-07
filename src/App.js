@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 function App() {
   const [message, setMessage] = useState('Hello');
   const messageText = useRef();
+  const hostingApp = (process.env.HOSTING_APP === undefined)?"Unknown":process.env.HOSTING_APP;
   const links = [
     {
     title: 'A great article',
@@ -47,7 +48,11 @@ function App() {
           </p>
         </div>
         {links.map(link => (<div><h3>{link?.title}</h3> <p>{link?.desc} {message}</p><p><a href={link?.url}>more info</a></p> </div>))}  
-        
+        <div>
+          <p>
+            Hosted on {hostingApp}
+          </p>
+        </div>
       </article>
     </div>
   );
