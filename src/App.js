@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 function App() {
   const [message, setMessage] = useState('Hello');
   const messageText = useRef();
-  const hostingApp = (process.env.HOSTING_APP === undefined)?"Unknown":process.env.HOSTING_APP;
+  const hostingApp = (process.env.REACT_APP_HOSTING_APP === undefined)?"Unknown":process.env.REACT_APP_HOSTING_APP;
   const links = [
     {
     title: 'A great article',
