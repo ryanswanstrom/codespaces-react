@@ -7,12 +7,12 @@ function App() {
   const hostingApp = (process.env.REACT_APP_HOSTING_APP === undefined)?"Unknown":process.env.REACT_APP_HOSTING_APP;
   const links = [
     {
-    title: 'A great article',
+    title: 'A Super Great article',
     desc: 'a longer description ',
     url: 'https://www.ryanswantrom.com'
     },
     {
-    title: 'The biggest news',
+    title: 'The Most Biggest news',
     desc: 'a short description of some news ',
     url: 'https://www.ryanswantrom.com'
     },
