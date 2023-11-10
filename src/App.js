@@ -52,6 +52,12 @@ function App() {
           <p>
             Hosted on {hostingApp}
           </p>
+          <p>
+            See this same app on: 
+              <a href="https://news-vercel.ryanswanstrom.com"> Vercel</a> | 
+              <a href="https://news-render.ryanswanstrom.com"> Render</a> |
+              <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> 
+          </p>
         </div>
       </article>
     </div>
