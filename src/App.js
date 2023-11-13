@@ -7,12 +7,12 @@ function App() {
   const hostingApp = (process.env.REACT_APP_HOSTING_APP === undefined)?"Unknown":process.env.REACT_APP_HOSTING_APP;
   const links = [
     {
-    title: 'A Super Great article',
+    title: 'A great article',
     desc: 'a longer description ',
     url: 'https://www.ryanswantrom.com'
     },
     {
-    title: 'The Most Biggest news',
+    title: 'The biggest news',
     desc: 'a short description of some news ',
     url: 'https://www.ryanswantrom.com'
     },
@@ -34,7 +34,7 @@ function App() {
         <img src="logo192.png" className="App-logo" alt="logo" />
         <p>
           A simple React site built
-          by <a className="App-link" href="https://ryanswanstrom.com">Ryan Swanstrom</a>
+          by <a className="App-link" href="https://ryanswanstrom.com">Ryan Swanstrom</a> hosted on {hostingApp}
         </p>
       </header>
       <article>
@@ -56,7 +56,8 @@ function App() {
             See this same app on: 
               <a href="https://news-vercel.ryanswanstrom.com"> Vercel</a> | 
               <a href="https://news-render.ryanswanstrom.com"> Render</a> |
-              <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> 
+              <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> |              
+              <a href="https://news-azure.ryanswanstrom.com"> Azure</a> 
           </p>
         </div>
       </article>
