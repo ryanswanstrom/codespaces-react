@@ -15,11 +15,6 @@ function App() {
     title: 'The biggest news',
     desc: 'a short description of some news ',
     url: 'https://www.ryanswantrom.com'
-    },
-    {
-    title: 'More Exciting Dev News',
-    desc: 'all about dev stuff ',
-    url: 'https://www.ryanswantrom.com'
     }
   ]
 
