@@ -52,7 +52,10 @@ function App() {
               <a href="https://news-vercel.ryanswanstrom.com"> Vercel</a> | 
               <a href="https://news-render.ryanswanstrom.com"> Render</a> |
               <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> |              
-              <a href="https://news-azure.ryanswanstrom.com"> Azure</a> 
+              <a href="https://news-azure.ryanswanstrom.com"> Azure</a> |              
+              <a href="https://news-netlify.ryanswanstrom.com"> Netlify</a> |              
+              <a href="https://news-digitalocean.ryanswanstrom.com"> Digital Ocean</a> |              
+              <a href="https://news-cloudflare.ryanswanstrom.com"> Cloudflare Pages</a> 
           </p>
         </div>
       </article>
