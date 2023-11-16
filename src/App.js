@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const newsFile = "https://newsdatafiles.blob.core.windows.net/news/news.json";
 
