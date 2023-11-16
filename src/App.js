@@ -1,64 +1,58 @@
 import './App.css';
-import { useRef, useState } from 'react';
+import News from './News.js';
+import { useRef, useState, useEffect } from 'react';
+
+const newsFile = "https://newsdatafiles.blob.core.windows.net/news/news.json";
+
 
 function App() {
-  const [message, setMessage] = useState('Hello');
-  const messageText = useRef();
   const hostingApp = (process.env.REACT_APP_HOSTING_APP === undefined)?"Unknown":process.env.REACT_APP_HOSTING_APP;
-  const links = [
-    {
-    title: 'A great article',
-    desc: 'a longer description ',
-    url: 'https://www.ryanswantrom.com'
-    },
-    {
-    title: 'The biggest news',
-    desc: 'a short description of some news ',
-    url: 'https://www.ryanswantrom.com'
-    }
-  ]
+  const [userData, setUserData] = useState({});
 
-  function NewsLinks(e) {
-    e.preventDefault();
-    setMessage(messageText.current.value)
-  }
+  useEffect(() => {
+    getNewsWithFetch();
+  }, []);
+
+  const getNewsWithFetch = async () => {  
+    const response = await fetch(newsFile);
+    const jsonData = await response.json();
+    setUserData(jsonData);
+  };
 
   return (
     <div className="App">
+      
       <header className="App-header">
-        <img src="logo192.png" className="App-logo" alt="logo" />
-        <p>
-          A simple React site built
-          by <a className="App-link" href="https://ryanswanstrom.com">Ryan Swanstrom</a> hosted on {hostingApp}
-        </p>
+        <h2>A simple React.js site built
+          by <a className="App-link" href="https://ryanswanstrom.com">Ryan Swanstrom </a> 
+          <br/>hosted on {hostingApp}
+          </h2>
       </header>
+      <div className="user-container">
+        <h3 className="info-item">Recent News for '{userData.query}'</h3> 
+        {userData.articles.map(art => (
+          <article> 
+            <h4>{art?.title} </h4>
+            <p>{art?.notes} <a href={art?.url}>...read more</a></p> 
+          </article>))}
+      </div>
+      
       <article>
-        <form onSubmit={NewsLinks}>
-          <input type='text' ref={messageText} placeholder='What news do you want to find?'/>
-          <input type='submit' value='Click it!' />
-        </form>
-        <div>
-          <p>
-            {message}
-          </p>
-        </div>
-        {links.map(link => (<div><h3>{link?.title}</h3> <p>{link?.desc} {message}</p><p><a href={link?.url}>more info</a></p> </div>))}  
-        <div>
-          <p>
-            Hosted on {hostingApp}
-          </p>
-          <p>
-            See this same app on: 
-              <a href="https://news-vercel.ryanswanstrom.com"> Vercel</a> | 
-              <a href="https://news-render.ryanswanstrom.com"> Render</a> |
-              <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> |              
-              <a href="https://news-azure.ryanswanstrom.com"> Azure</a> |              
-              <a href="https://news-netlify.ryanswanstrom.com"> Netlify</a> |              
-              <a href="https://news-digitalocean.ryanswanstrom.com"> Digital Ocean</a> |              
-              <a href="https://news-cloudflare.ryanswanstrom.com"> Cloudflare Pages</a> 
-          </p>
-        </div>
+        <p>
+          Hosted on {hostingApp}
+        </p>
+        <p>
+          See this same app on: 
+          <a href="https://news-vercel.ryanswanstrom.com"> Vercel</a> | 
+          <a href="https://news-render.ryanswanstrom.com"> Render</a> |
+          <a href="https://news-kinsta.ryanswanstrom.com"> Kinsta</a> |              
+          <a href="https://news-azure.ryanswanstrom.com"> Azure</a> |              
+          <a href="https://news-netlify.ryanswanstrom.com"> Netlify</a> |              
+          <a href="https://news-digitalocean.ryanswanstrom.com"> Digital Ocean</a> |              
+          <a href="https://news-cloudflare.ryanswanstrom.com"> Cloudflare Pages</a> 
+        </p>
       </article>
+        
     </div>
   );
 }
