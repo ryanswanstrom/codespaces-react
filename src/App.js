@@ -26,6 +26,11 @@ function App() {
           </h2>
       </header>
         <h3 className="info-item">Recent News for '{userData.query}'</h3> 
+        {userData?.articles?.map((obj, index) => (
+          <article> 
+            <h4>{obj?.title} </h4>
+            <p>{obj?.notes} <a href={obj?.url}>...read more</a></p> 
+          </article>))}
       
       <article>        
         <p>
