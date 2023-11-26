@@ -1,7 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 
-const newsFile = "https://newsdatafiles.blob.core.windows.net/news/news.json";
+//const newsFile = "https://newsdatafiles.blob.core.windows.net/news/news.json";
+const newsFile = "https://pub-cc32a687251a4596b07817082fd4f88a.r2.dev/news.json";
 
 function App() {
   const hostingApp = (process.env.REACT_APP_HOSTING_APP === undefined)?"Unknown":process.env.REACT_APP_HOSTING_APP;
